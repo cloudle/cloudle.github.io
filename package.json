@@ -1,0 +1,23 @@
+{
+  "name": "cloudle.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudle/cloudle.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cloudle/cloudle.github.io/issues"
+  },
+  "homepage": "https://github.com/cloudle/cloudle.github.io#readme",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-universal-ui": "0.0.24"
+  }
+}
