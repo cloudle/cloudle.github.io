@@ -32,7 +32,7 @@ if (env === 'dev') {
 
 module.exports = {
 	cache: true,
-	devtool: prod ? null : 'eval-source-map',
+	devtool: prod ? false : 'eval-source-map',
 	entry: {
 		app: prod ? [entry] : [...hot, entry]
 	},

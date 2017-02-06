@@ -17,7 +17,7 @@ module.exports = {
 			'react-native-vector-icons/FontAwesome',
 			'react-native-vector-icons/Ionicons',
 			'react-native-vector-icons/glyphmaps/MaterialIcons.json',
-			'tinycolor2', 'lodash',
+			'tinycolor2',
 			...devVendors,
 		],
 	},
