@@ -23,9 +23,11 @@
     "babel-polyfill": "^6.22.0",
     "history": "^4.5.1",
     "react": "^15.4.2",
+    "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
     "react-router-addons-controlled": "0.0.1",
-    "react-universal-ui": "0.0.24",
+    "react-universal-ui": "0.0.36",
+    "redux": "^3.6.0",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
