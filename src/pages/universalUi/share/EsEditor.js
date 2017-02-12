@@ -12,7 +12,7 @@ export default class EsEditor extends Component {
 	  require('codemirror/mode/javascript/javascript');
 
 		this::injectEditor({
-			value: defaultCode,
+			value: this.props.code || defaultCode,
 			mode: 'javascript',
 			extraKeys: {
 				'Cmd-Enter': () => {

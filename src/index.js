@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
+import './pages/universalUi/share/markdownRenderers/Highlightjs.css';
 
 import Routes from './routes';
 import { sizes } from './utils';

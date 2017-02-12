@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+import tinyColor from 'tinycolor2';
 import { sizes, colors } from '../utils';
 import MenuItem from './navigatorMenuItem';
 
 export default class Navigator extends Component {
 	render () {
 		return <View style={styles.container}>
+			{this.renderCorner()}
 			{this.renderMenuItems()}
+		</View>
+	}
+
+	renderCorner () {
+		return <View style={styles.cornerContainer}>
+
 		</View>
 	}
 
@@ -26,6 +34,10 @@ const styles = StyleSheet.create({
 		height: sizes.navigatorHeight,
 		backgroundColor: colors.darkBackground,
 	},
+	cornerContainer: {
+		width: sizes.sideBarWidth,
+		backgroundColor: tinyColor(colors.darkBackground).lighten(2).toHexString(),
+	}
 });
 
 const menuItems = [

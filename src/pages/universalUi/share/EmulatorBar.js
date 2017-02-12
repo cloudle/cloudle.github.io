@@ -10,7 +10,7 @@ import Emulator from './emulator';
 	}
 })
 
-export default class UniversalCodeDemo extends Component {
+export default class EmulatorBar extends Component {
 	render () {
 		const Demo = this.props.demoComponent;
 		return <View style={styles.container}>
@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
 		paddingTop: 20,
 		width: 340,
 		alignItems: 'center',
-		backgroundColor: '#333333',
+		backgroundColor: '#343542',
 	}
 });

@@ -10,7 +10,9 @@ export default class UniversalSidebar extends Component {
 			rippleColor="#c2c2c2"
 			wrapperStyle={styles.wrapper}
 			innerStyle={styles.inner}>
-			<Text>{this.props.title}</Text>
+			<Text style={styles.title}>
+				{this.props.title}
+			</Text>
 		</ResponsibleTouchArea>
 	}
 }
@@ -23,5 +25,8 @@ const styles = StyleSheet.create({
 	inner: {
 		padding: 8,
 		paddingTop: 12, paddingBottom: 12,
+	},
+	title: {
+		// color: '#dedede',
 	}
 });
