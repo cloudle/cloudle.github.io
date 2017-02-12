@@ -13,7 +13,7 @@ export default class Navigator extends Component {
 
 	renderMenuItems () {
 		return menuItems.map((item, i) => {
-			return <MenuItem key={i} title={item.title}/>
+			return <MenuItem key={i} title={item.title} path={item.path}/>
 		});
 	}
 }
@@ -29,6 +29,6 @@ const styles = StyleSheet.create({
 });
 
 const menuItems = [
-	{ title: 'About me' },
-	{ title: 'Universal UI' },
+	{ title: 'About me', path: '/about/cloudle' },
+	{ title: 'Universal UI', path: '/' },
 ];

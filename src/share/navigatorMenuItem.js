@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 
 import { sizes } from '../utils';
+import * as routerActions from '../store/action/router';
+
+@connect(({app}) => {
+	return {
+
+	}
+})
 
 export default class NavigatorMenuItem extends Component {
 	render () {
-		return <View className="touchable" style={styles.container}>
+		return <TouchableOpacity
+			className="touchable" style={styles.container}
+			onPress={this::onNavigate}>
 			<Text className="no-select" style={styles.title}>
 				{this.props.title}
 			</Text>
-		</View>
+		</TouchableOpacity>
 	}
+}
+
+function onNavigate () {
+	this.props.dispatch(routerActions.push(this.props.path));
 }
 
 const titleBaseStyle = {

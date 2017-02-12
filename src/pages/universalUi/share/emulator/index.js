@@ -7,6 +7,9 @@ export default class AppEmulator extends Component {
   render () {
     return <View style={styles.container}>
       {this.props.children}
+      <View style={{
+        position: 'absolute', top: 0, left: 0, right: 0, height: 64,
+        backgroundColor: '#00bcd4'}}/>
       <Image
         resizeMode={Image.resizeMode.contain}
         style={styles.statusBar}
@@ -16,7 +19,7 @@ export default class AppEmulator extends Component {
 }
 
 const emulatorSize = {
-  width: 375, height: 667,
+  width: 320, height: 568,
 };
 
 const styles = StyleSheet.create({
@@ -24,11 +27,11 @@ const styles = StyleSheet.create({
     ...emulatorSize,
     borderRadius: 3,
     overflow: 'hidden',
+    backgroundColor: '#292929',
   },
   statusBar: {
     position: 'absolute',
     top: 0, left: 0, right: 0,
     height: 24,
-    backgroundColor: '#333'
   }
 });

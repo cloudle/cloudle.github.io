@@ -55,6 +55,9 @@ module.exports = {
 			{
 				test: /\.js?$/,
 				loaders: prod ? ['babel-loader'] : ['react-hot-loader/webpack', 'babel-loader'],
+				exclude: [
+					/node_modules\/react-router-dom/
+				]
 			},
 			{ test: /\.css$/, loader: "style-loader!css-loader" },
 			{

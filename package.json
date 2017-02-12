@@ -21,12 +21,15 @@
   "homepage": "https://github.com/cloudle/cloudle.github.io#readme",
   "dependencies": {
     "babel-polyfill": "^6.22.0",
-    "history": "^4.5.1",
+    "codemirror": "^5.23.0",
+    "codemirror-graphql": "^0.6.3",
+    "codemirror-mode-elixir": "^1.1.0",
+    "graphql": "^0.9.1",
+    "history": "^3.2.1",
     "react": "^15.4.2",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
-    "react-router-addons-controlled": "0.0.1",
-    "react-universal-ui": "0.0.36",
+    "react-universal-ui": "0.0.38",
     "redux": "^3.6.0",
     "tinycolor2": "^1.4.1"
   },
@@ -36,9 +39,11 @@
     "babel-plugin-transform-function-bind": "^6.22.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.3.0",
     "babel-preset-react-native": "^1.9.1",
+    "css-loader": "^0.26.1",
     "file-loader": "^0.10.0",
     "json-loader": "^0.5.4",
     "react-hot-loader": "^3.0.0-beta.6",
+    "style-loader": "^0.13.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
   }
