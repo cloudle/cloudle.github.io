@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 		width: sizes.sideBarWidth, paddingTop: 20,
 		borderRightWidth: 1,
 		borderColor: '#f2f2f2',
-		backgroundColor: '#ffffff',
+		backgroundColor: '#fafafa',
 	}
 });
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Animated, View, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
 import Emulator from './emulator';
@@ -14,9 +14,11 @@ export default class EmulatorBar extends Component {
 	render () {
 		const Demo = this.props.demoComponent;
 		return <View style={styles.container}>
-			<Emulator>
-				<Demo/>
-			</Emulator>
+			<Animated.View style={this.props.emulatorStyles}>
+				<Emulator>
+					<Demo/>
+				</Emulator>
+			</Animated.View>
 		</View>
 	}
 }
@@ -24,8 +26,9 @@ export default class EmulatorBar extends Component {
 const styles = StyleSheet.create({
 	container: {
 		paddingTop: 20,
-		width: 340,
+		width: 350,
 		alignItems: 'center',
+		// backgroundColor: '#343542',
 		backgroundColor: '#343542',
 	}
 });

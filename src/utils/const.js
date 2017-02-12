@@ -1,6 +1,6 @@
 export const sizes = {
 	navigatorHeight: 60,
-	sideBarWidth: 220,
+	sideBarWidth: 256,
 };
 
 export const colors = {

@@ -1,0 +1,98 @@
+.document-bar {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.7;
+    font-size: 15px;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.2px;
+}
+
+.document-bar a {
+    color: #4183c4;
+    text-decoration: none;
+    background: 0 0;
+    font-weight: 400;
+}
+
+.document-bar a:hover {
+    text-decoration: underline;
+}
+
+.document-bar strong {
+    font-weight: 500;
+}
+
+code.hljs {
+    border-radius: 3px;
+    background-color: #f9f9fb;
+    letter-spacing: 0;
+}
+
+/*.hljs-comment,*/
+/*.hljs-quote {*/
+    /*color: #999999;*/
+/*}*/
+
+/*!* Tomorrow Red *!*/
+/*.hljs-variable,*/
+/*.hljs-template-variable,*/
+/*.hljs-tag,*/
+/*.hljs-name,*/
+/*.hljs-selector-id,*/
+/*.hljs-selector-class,*/
+/*.hljs-regexp,*/
+/*.hljs-deletion {*/
+    /*color: #E06C75;*/
+/*}*/
+
+/*!* Tomorrow Orange *!*/
+/*.hljs-number,*/
+/*.hljs-built_in,*/
+/*.hljs-builtin-name,*/
+/*.hljs-literal,*/
+/*.hljs-type,*/
+/*.hljs-params,*/
+/*.hljs-meta,*/
+/*.hljs-link {*/
+    /*color: #f99157;*/
+/*}*/
+
+/*!* Tomorrow Yellow *!*/
+/*.hljs-attribute {*/
+    /*color: #ffcc66;*/
+/*}*/
+
+/*!* Tomorrow Green *!*/
+/*.hljs-string,*/
+/*.hljs-symbol,*/
+/*.hljs-bullet,*/
+/*.hljs-addition {*/
+    /*color: #C3E88D;*/
+/*}*/
+
+/*!* Tomorrow Blue *!*/
+/*.hljs-title,*/
+/*.hljs-section {*/
+    /*color: #6699cc;*/
+/*}*/
+
+/*!* Tomorrow Purple *!*/
+/*.hljs-keyword,*/
+/*.hljs-selector-tag {*/
+    /*color: #C678DD;*/
+/*}*/
+
+.hljs {
+    padding: 22px 20px;
+    font-size: 14px;
+    font-family: 'Fira Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+/*.hljs-emphasis {*/
+    /*font-style: italic;*/
+/*}*/
+
+/*.hljs-strong {*/
+    /*font-weight: bold;*/
+/*}*/

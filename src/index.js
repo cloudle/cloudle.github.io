@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
-import './pages/universalUi/share/markdownRenderers/Highlightjs.css';
+import 'highlight.js/styles/tomorrow.css';
+import './pages/universalUi/share/DocumentBar.css';
 
 import Routes from './routes';
 import { sizes } from './utils';

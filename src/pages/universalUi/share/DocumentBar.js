@@ -18,7 +18,10 @@ export default class DocumentBar extends Component {
 			CodeBlock,
 		};
 
-		return <View style={styles.container} onLayout={this::onContainerLayout}>
+		return <View
+			style={styles.container}
+		  className="document-bar"
+		  onLayout={this::onContainerLayout}>
 			<Markdown
 				source={basicSource}
 				renderers={renderers}/>
@@ -33,7 +36,8 @@ function onContainerLayout ({ nativeEvent }) {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		padding: 12,
+		backgroundColor: '#ffffff',
+		padding: 12, paddingLeft: 36, paddingRight: 36,
 		overflowX: 'auto',
 	}
 });
