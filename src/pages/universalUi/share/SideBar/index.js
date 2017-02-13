@@ -3,6 +3,8 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import { sizes } from '../../../../utils';
 import MenuItem from './sideBarMenuItem';
+import EssentialExample from '../../examples/essential';
+import AdvanceExample from '../../examples/advance';
 
 export default class SideBar extends Component {
 	render () {
@@ -13,7 +15,7 @@ export default class SideBar extends Component {
 
 	renderMenuItems () {
 		return sideBarMenus.map((itemOptions, i) => {
-			return <MenuItem key={i} {...itemOptions}/>
+			return <MenuItem key={i} {...itemOptions} />
 		})
 	}
 }
@@ -27,10 +29,29 @@ const styles = StyleSheet.create({
 	}
 });
 
-const sideBarMenus = [
-	{ title: 'Basic' },
-	{ title: 'Button' },
-	{ title: 'Input' },
-	{ title: 'Drawer' },
-	{ title: 'Navigator (Native)' },
-];
+export const sideBarMenus = [{
+	title: 'Basic',
+	document: require('../../docs/basic.md'),
+	component: EssentialExample,
+	fakeNavigator: true,
+},{
+	title: 'More...',
+	document: require('../../docs/advance.md'),
+	component: AdvanceExample,
+}, {
+	title: 'Buttons',
+	document: require('../../docs/missing.md'),
+	component: EssentialExample,
+}, {
+	title: 'Input',
+	document: require('../../docs/missing.md'),
+	component: EssentialExample,
+}, {
+	title: 'Drawer',
+	document: require('../../docs/missing.md'),
+	component: EssentialExample,
+}, {
+	title: 'Navigator (Native)',
+	document: require('../../docs/missing.md'),
+	component: EssentialExample,
+}];

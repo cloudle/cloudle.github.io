@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
-import {
-	StatusBar,
-	View,
-	Text,
-	StyleSheet
-} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 
-import { Button, utils } from 'react-universal-ui';
-const { isIos, isAndroid } = utils;
+import { Button } from 'react-universal-ui';
+import * as appActions from '../store/action/app';
+
+@connect(({app}) => {
+	return {
+		counter: app.counter,
+	}
+})
 
 export default class app extends Component {
-
-	handlePress () {
-		console.log("Yay!");
-	}
-
 	render() {
 		return <View style={styles.container}>
 			<Text style={styles.welcome}>
@@ -28,9 +25,10 @@ export default class app extends Component {
 				Cmd+D or shake for dev menu
 			</Text>
 			<Button
-				wrapperStyle={styles.buttonWrapper}
-				title="Click me!!"
-				onPress={this.handlePress.bind(this)}/>
+				wrapperStyle={{backgroundColor: '#00bcd4', width: 120}}
+				title="Click me!" onPress={() => {
+					this.props.dispatch(appActions.increaseCounter());
+				}}/>
 		</View>
 	}
 }
@@ -40,7 +38,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#F5FCFF',
 	},
 	welcome: {
 		fontSize: 20,
@@ -52,15 +49,4 @@ const styles = StyleSheet.create({
 		color: '#333333',
 		marginBottom: 5,
 	},
-	buttonWrapper: {
-		backgroundColor: '#00bcd4',
-		width: 120
-	}
 });
-
-if (isIos) {
-	StatusBar.setBarStyle('light-content', true);
-} else if (isAndroid) {
-	StatusBar.setBackgroundColor('transparent');
-	StatusBar.setTranslucent(true);
-}

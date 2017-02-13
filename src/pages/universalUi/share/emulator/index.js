@@ -7,14 +7,20 @@ export default class AppEmulator extends Component {
   render () {
     return <View style={styles.container}>
       {this.props.children}
-      <View style={{
-        position: 'absolute', top: 0, left: 0, right: 0, height: 64,
-        backgroundColor: '#00bcd4'}}/>
+      {this.renderFakeNavigator()}
       <Image
         resizeMode={Image.resizeMode.contain}
         style={styles.statusBar}
         source={require('./ios-statusbar-light.png')}/>
     </View>
+  }
+
+  renderFakeNavigator () {
+    if (this.props.fakeNavigator) {
+      return <View style={{
+        position: 'absolute', top: 0, left: 0, right: 0, height: 64,
+        backgroundColor: '#00bcd4'}}/>
+    }
   }
 }
 

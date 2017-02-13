@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 
 import Markdown from 'react-markdown';
 import CodeBlock from './markdownRenderers/CodeBlock';
+
+@connect(({app}) => {
+	return {
+		document: app.activeSection.document,
+	}
+})
 
 export default class DocumentBar extends Component {
 	constructor (props) {
@@ -22,8 +29,10 @@ export default class DocumentBar extends Component {
 			style={styles.container}
 		  className="document-bar"
 		  onLayout={this::onContainerLayout}>
+			{/*source={this.props.document}*/}
+			{/*source={require('../docs/advance.md')}*/}
 			<Markdown
-				source={basicSource}
+				source={this.props.document}
 				renderers={renderers}/>
 		</View>
 	}
@@ -41,5 +50,3 @@ const styles = StyleSheet.create({
 		overflowX: 'auto',
 	}
 });
-
-const basicSource = require('../docs/basic.md');

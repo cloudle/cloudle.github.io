@@ -6,16 +6,17 @@ import Emulator from './emulator';
 
 @connect(({app}) => {
 	return {
-		demoComponent: app.demoComponent,
+		component: app.activeSection.component,
+		fakeNavigator: app.activeSection.fakeNavigator,
 	}
 })
 
 export default class EmulatorBar extends Component {
 	render () {
-		const Demo = this.props.demoComponent;
+		const Demo = this.props.component;
 		return <View style={styles.container}>
 			<Animated.View style={this.props.emulatorStyles}>
-				<Emulator>
+				<Emulator fakeNavigator={this.props.fakeNavigator}>
 					<Demo/>
 				</Emulator>
 			</Animated.View>

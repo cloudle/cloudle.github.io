@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 import { ResponsibleTouchArea } from 'react-universal-ui';
+
+import * as appActions from '../../../../store/action/app';
 import { colors } from '../../../../utils';
+
+@connect(({app}) => {
+	return {
+
+	}
+})
 
 export default class UniversalSidebar extends Component {
 	render () {
 		return <ResponsibleTouchArea
+			onPress={this::this.handleMenuPress}
 			className="touchable"
 			rippleColor="#c2c2c2"
 			wrapperStyle={styles.wrapper}
@@ -14,6 +24,10 @@ export default class UniversalSidebar extends Component {
 				{this.props.title}
 			</Text>
 		</ResponsibleTouchArea>
+	}
+
+	handleMenuPress () {
+		this.props.dispatch(appActions.switchDocSection(this.props));
 	}
 }
 
