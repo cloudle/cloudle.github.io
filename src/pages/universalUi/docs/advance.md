@@ -8,11 +8,11 @@
 This example **extract 2 scenes** from a real project.
 
 ## Features
-- **Navigator** (**React Native**'s *Navigation Experimental*).
-- **Drawer** (React Native Drawer)
-- **Selection**
-- **Button** in real from
-- **Input** in real form
+- [x] Navigator (React Native's Navigation Experimental).
+- [x] Drawer (React Native Drawer)
+- [x] Selection
+- [x] Button in real from
+- [x] Input in real form
 
 ### Navigator: 
 Navigation system of Native App, press **"REGISTER"** navigate us to **Register Scene**.
@@ -22,11 +22,12 @@ import { NavigationExperimental, utils } from 'react-universal-ui';
 ```
 
 These are very nice articles about **Navigation Experimental**:
-- [First look: React Native NavigationExperimental Part 1][navigator-part1]<br>
-- [React Native NavigationExperimental Part 2 — Implementing Redux][navigator-part2]<br>
-- [React Native NavigationExperimental in Depth][navigator-in-depth]
 
-To make it work, we'll need some Redux setup - which **react-universal-ui**'s utils already do it for us:<br>
+[First look: React Native NavigationExperimental Part 1][navigator-part1]<br>
+[React Native NavigationExperimental Part 2 — Implementing Redux][navigator-part2]<br>
+[React Native NavigationExperimental in Depth][navigator-in-depth]
+
+To make it work, we'll need some **Redux** setup - which **react-universal-ui**'s utils already do it for us:<br>
 
 ```flow js
 /* Higher order route-reducer to use with Redux store*/

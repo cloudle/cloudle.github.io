@@ -30,12 +30,15 @@ const styles = StyleSheet.create({
 });
 
 export const sideBarMenus = [{
-	title: 'Basic',
+	title: 'Read me',
+	document: require('../../docs/readme.md'),
+},{
+	title: 'Basic usage',
 	document: require('../../docs/basic.md'),
 	component: EssentialExample,
 	fakeNavigator: true,
 },{
-	title: 'More...',
+	title: 'Advance usage',
 	document: require('../../docs/advance.md'),
 	component: AdvanceExample,
 }, {

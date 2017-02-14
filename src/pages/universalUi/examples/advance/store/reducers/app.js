@@ -9,7 +9,6 @@ const initialState = {
 };
 
 export default utils.appReducer((state = initialState, action) => {
-	console.log(action);
 	switch (action.type) {
 		case Actions.IncreaseCounter:
 			return {...state, counter: state.counter + action.volume};

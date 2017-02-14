@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 import { Input } from 'react-universal-ui';
 
 import tinyColor from 'tinycolor2';
 import { sizes, colors } from '../utils';
 import MenuItem from './navigatorMenuItem';
+
+@connect(({app}) => {
+	return {
+		activeSection: app.activeSection,
+	}
+})
 
 export default class Navigator extends Component {
 	render () {
@@ -33,7 +40,9 @@ export default class Navigator extends Component {
 	}
 
 	renderRightCorner () {
-		return <View style={styles.rightCornerContainer}/>
+		if (this.props.activeSection.component) {
+			return <View style={styles.rightCornerContainer}/>
+		}
 	}
 }
 

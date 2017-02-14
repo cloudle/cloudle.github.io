@@ -9,7 +9,7 @@
 }
 
 .document-bar a {
-    color: #4183c4;
+    color: #7eb328;
     text-decoration: none;
     background: 0 0;
     font-weight: 400;
@@ -84,7 +84,7 @@ code.hljs {
 /*}*/
 
 .hljs {
-    padding: 22px 20px;
+    padding: 18px 20px;
     font-size: 14px;
     font-family: 'Fira Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
 }

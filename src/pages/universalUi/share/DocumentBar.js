@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import Markdown from 'react-markdown';
 import CodeBlock from './markdownRenderers/CodeBlock';
+import Heading from './markdownRenderers/Heading';
+import List from './markdownRenderers/List';
 
 @connect(({app}) => {
 	return {
@@ -23,6 +25,8 @@ export default class DocumentBar extends Component {
 		const renderers = {
 			...Markdown.renderers,
 			CodeBlock,
+			Heading,
+			List,
 		};
 
 		return <View

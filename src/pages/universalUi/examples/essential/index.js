@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 import { Button, utils } from 'react-universal-ui';
+import Icon from 'react-native-vector-icons/Ionicons';
 const { isIos, isAndroid } = utils;
 
 export default class app extends Component {
@@ -18,14 +19,16 @@ export default class app extends Component {
 	render() {
 		return <View style={styles.container}>
 			<Text style={styles.welcome}>
-				Welcome to React Native!
+				Welcome to{'\n'}
+				React Universal! <Icon name="md-bulb"/>
 			</Text>
 			<Text style={styles.instructions}>
-				To get started, edit src/app.js
+				Source code for this example is in{'\n'}
+				the left-side document.
 			</Text>
 			<Text style={styles.instructions}>
-				Press Cmd+R to reload,{'\n'}
-				Cmd+D or shake for dev menu
+				Nah, you cannot shake for dev-menu,{'\n'}
+				because we are in Browser!
 			</Text>
 			<Button
 				wrapperStyle={styles.buttonWrapper}
@@ -50,11 +53,12 @@ const styles = StyleSheet.create({
 	instructions: {
 		textAlign: 'center',
 		color: '#333333',
-		marginBottom: 5,
+		marginBottom: 10,
 	},
 	buttonWrapper: {
 		backgroundColor: '#00bcd4',
-		width: 120
+		width: 120,
+		marginTop: 15,
 	}
 });
 
