@@ -43,7 +43,7 @@ export const sideBarMenus = [{
 	component: AdvanceExample,
 }, {
 	title: 'Buttons',
-	document: require('../../docs/missing.md'),
+	document: require('../../docs/button.md'),
 	component: EssentialExample,
 }, {
 	title: 'Input',
