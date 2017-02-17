@@ -23,7 +23,7 @@ export default class DocumentBar extends Component {
 	}
 
 	render () {
-		const liveEdit = true, developmentMode = ENV == 'dev',
+		const liveEdit = false, developmentMode = ENV == 'dev',
 			renderers = { ...Markdown.renderers, CodeBlock, Heading, List },
 			markdownContent = developmentMode && liveEdit
 				? require('../docs/select.md') : this.props.document;
