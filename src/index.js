@@ -16,8 +16,6 @@ import Routes from './routes';
 import { sizes } from './utils';
 import * as appActions from './store/action/app';
 
-const smallScreenSize = 1023;
-
 export default function AppContainer ({store}) {
 	return <Provider store={store}>
 		<App/>
@@ -27,12 +25,13 @@ export default function AppContainer ({store}) {
 @connect(({app}) => {
 	return {
 		dimensions: app.dimensions,
+		drawerOpen: app.drawerOpen,
 	}
 })
 
 export class App extends Component {
 	componentDidMount () {
-		window.onresize = utils.debounce(this::onWindowResize, 200); this::onWindowResize();
+		window.onresize = utils.debounce(this::onWindowResize, 100); this::onWindowResize();
 	}
 
 	componentWillUnmount () {
@@ -42,17 +41,18 @@ export class App extends Component {
 	render () {
 		const screenWidth = this.props.dimensions.width,
 			isTouchDevice = utils.isTouchDevice(),
-			smallScreen = screenWidth < smallScreenSize,
+			smallScreen = screenWidth < sizes.smallScreen,
 			drawerDisable = !isTouchDevice;
 
 		return <Drawer
-			ref={(drawer) => {this.drawer = drawer; window.drawer = drawer;}}
 			type="overlay" side="left"
 			negotiatePan={true} tapToClose={true}
 			panOpenMask={0.2}
 			openDrawerOffset={screenWidth - sizes.sideBarWidth}
 			content={<Sidebar/>}
 			disabled={drawerDisable}
+			captureGestures={!drawerDisable}
+			open={this.props.drawerOpen}
 			tweenHandler={smallScreen ? mobileTween : desktopTween}>
 			<View style={styles.container}>
 				<Routes/>
@@ -63,15 +63,13 @@ export class App extends Component {
 
 function onWindowResize () {
 	const dimensions = Dimensions.get('window'),
-		smallScreen = dimensions.width < smallScreenSize,
+		smallScreen = dimensions.width < sizes.smallScreen,
 		drawerDisable = !utils.isTouchDevice();
 
-	if (drawerDisable) {
-		if (smallScreen) {
-			this.drawer.close();
-		} else {
-			this.drawer.open();
-		}
+	if (smallScreen) {
+		this.props.dispatch(appActions.toggleDrawer(false));
+	} else {
+		this.props.dispatch(appActions.toggleDrawer(true));
 	}
 
 	this.props.dispatch(appActions.syncDimensions(dimensions));
@@ -90,7 +88,7 @@ function mobileTween (ratio, side = 'left') {
 		main: {
 			opacity:(2-ratio)/1.2,
 			padding: 0,
-			left: ratio * 100,
+			left: ratio * 50,
 		},
 		drawer: {
 			shadowColor: '#000000',

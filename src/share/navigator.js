@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { Input } from 'react-universal-ui';
 
 import tinyColor from 'tinycolor2';
 import { sizes, colors } from '../utils';
 import MenuItem from './navigatorMenuItem';
+import * as appActions from '../store/action/app';
 
 @connect(({app}) => {
 	return {
@@ -23,6 +24,15 @@ export default class Navigator extends Component {
 		</View>
 	}
 
+	renderBurger () {
+		return <TouchableOpacity
+			onPress={this::toggleSidebar}
+			activeOpacity={0.8}
+			style={styles.burgerContainer}>
+			<Icon name="md-menu" size={20} color="#666666"/>
+		</TouchableOpacity>
+	}
+
 	renderMenuItems () {
 		return menuItems.map((item, i) => {
 			return <MenuItem key={i} title={item.title} path={item.path}/>
@@ -36,14 +46,25 @@ export default class Navigator extends Component {
 	}
 }
 
+function toggleSidebar () {
+	this.props.dispatch(appActions.toggleDrawer());
+}
+
+
 const styles = StyleSheet.create({
 	container: {
-		// position: 'fixed',
-		// top: 0, left: 0, right: 0,
 		flexDirection: 'row',
 		height: sizes.navigatorHeight,
 		backgroundColor: '#ffffff',
 		// backgroundColor: colors.darkBackground,
+	},
+	burgerContainer: {
+		width: 60,
+		justifyContent: 'center',
+		alignItems: 'center',
+		borderRightWidth: 1,
+		borderBottomWidth: 1,
+		borderColor: "#f2f2f2",
 	},
 	rightCornerContainer: {
 		width: 350,
@@ -53,10 +74,11 @@ const styles = StyleSheet.create({
 		flex: 1, flexDirection: 'row',
 		borderBottomWidth: 1,
 		borderColor: "#f2f2f2",
+		marginLeft: 60,
 	}
 });
 
 const menuItems = [
-	{ title: 'About me', path: '/about/cloudle' },
+	// { title: 'About me', path: '/about/cloudle' },
 	{ title: 'Universal UI', path: '/' },
 ];

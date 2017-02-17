@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 		borderColor: '#f2f2f2',
 	},
 	inner: {
-		padding: 8,
+		padding: 20,
 		paddingTop: 12, paddingBottom: 12,
 	},
 	title: {

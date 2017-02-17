@@ -12,6 +12,10 @@ export function setDrawerInstance (instance) {
 	return { type: Actions.SetDrawerInstance, instance };
 }
 
+export function toggleDrawer (flag) {
+	return { type: Actions.ToggleDrawer, flag };
+}
+
 export function switchDocSection (section) {
 	return { type: Actions.SwitchDocSection, section };
 }

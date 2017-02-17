@@ -7,6 +7,7 @@ import essentialDemo from '../../pages/universalUi/examples/essential';
 const initialState = {
 	counter: 0,
 	drawer: {},
+	drawerOpen: false,
 	dimensions: Dimensions.get('window'),
 	activeSection: sideBarMenus[0],
 };
@@ -21,6 +22,11 @@ export default function (state = initialState, action) {
 			return { ...state, dimensions: action.dimensions };
 		case Actions.SetDrawerInstance:
 			return { ...state, drawer: action.instance };
+		case Actions.ToggleDrawer:
+			return {
+				...state,
+				drawerOpen:  action.flag != null ? action.flag : !state.drawerOpen
+			};
 		default:
 			return state;
 	}

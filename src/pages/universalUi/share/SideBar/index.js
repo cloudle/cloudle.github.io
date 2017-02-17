@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 import { Input } from 'react-universal-ui';
 
+import * as appActions from '../../../../store/action/app';
 import { sizes } from '../../../../utils';
 import MenuItem from './sideBarMenuItem';
 import EssentialExample from '../../examples/essential';
 import AdvanceExample from '../../examples/advance';
 
+
+@connect(({app}) => {
+	return {
+
+	}
+})
+
 export default class SideBar extends Component {
 	render () {
 		return <View style={styles.container}>
+			<TouchableOpacity
+				onPress={this::toggleSidebar}
+				activeOpacity={0.8}
+				style={styles.burgerContainer}>
+				<Icon name="md-menu" size={20} color="#666666"/>
+			</TouchableOpacity>
 			<View style={styles.leftCornerContainer}>
 				<Input
-					wrapperStyle={{bottom: -3}}
+					wrapperStyle={{bottom: -3, paddingLeft: 10}}
 					hint="e.g: button"
 					floatingLabel="Type to search"/>
 			</View>
@@ -26,6 +41,10 @@ export default class SideBar extends Component {
 			return <MenuItem key={i} {...itemOptions} />
 		})
 	}
+}
+
+function toggleSidebar () {
+	this.props.dispatch(appActions.toggleDrawer());
 }
 
 const styles = StyleSheet.create({
@@ -43,7 +62,18 @@ const styles = StyleSheet.create({
 		borderRightWidth: 1,
 		borderBottomWidth: 1,
 		borderColor: "#f2f2f2",
-	}
+	},
+	burgerContainer: {
+		position: 'absolute',
+		top: 0, right: -60,
+		width: 60, backgroundColor: '#ffffff',
+		height: sizes.navigatorHeight,
+		justifyContent: 'center',
+		alignItems: 'center',
+		borderRightWidth: 1,
+		borderBottomWidth: 1,
+		borderColor: "#f2f2f2",
+	},
 });
 
 export const sideBarMenus = [{
