@@ -20,9 +20,10 @@ export default class UniversalUiPage extends Component {
 	render () {
 		return <View style={styles.container}>
 			<Navigator/>
-			<SideBar/>
-			<DocumentBar/>
-			{this.renderDemo()}
+			<View style={styles.contentContainer}>
+				<DocumentBar/>
+				{this.renderDemo()}
+			</View>
 		</View>
 	}
 
@@ -44,7 +45,10 @@ export default class UniversalUiPage extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1, flexDirection: 'row',
+		flex: 1, flexDirection: 'column',
 		backgroundColor: '#f9f9fb',
 	},
+	contentContainer: {
+		flex: 1, flexDirection: 'row',
+	}
 });

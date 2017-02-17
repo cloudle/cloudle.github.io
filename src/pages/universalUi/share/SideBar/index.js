@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { Input } from 'react-universal-ui';
 
 import { sizes } from '../../../../utils';
 import MenuItem from './sideBarMenuItem';
@@ -9,6 +10,13 @@ import AdvanceExample from '../../examples/advance';
 export default class SideBar extends Component {
 	render () {
 		return <View style={styles.container}>
+			<View style={styles.leftCornerContainer}>
+				<Input
+					wrapperStyle={{bottom: -3}}
+					hint="e.g: button"
+					floatingLabel="Type to search"/>
+			</View>
+
 			{this.renderMenuItems()}
 		</View>
 	}
@@ -22,10 +30,19 @@ export default class SideBar extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		width: sizes.sideBarWidth, paddingTop: 20,
+		flex: 1,
+		width: sizes.sideBarWidth,
 		borderRightWidth: 1,
 		borderColor: '#f2f2f2',
 		backgroundColor: '#fafafa',
+	},
+	leftCornerContainer: {
+		width: sizes.sideBarWidth,
+		height: sizes.navigatorHeight,
+		backgroundColor: '#ffffff',
+		borderRightWidth: 1,
+		borderBottomWidth: 1,
+		borderColor: "#f2f2f2",
 	}
 });
 
@@ -33,28 +50,27 @@ export const sideBarMenus = [{
 	title: 'Read me',
 	document: require('../../docs/readme.md'),
 },{
-	title: 'Basic usage',
+	title: 'Basic example',
 	document: require('../../docs/basic.md'),
 	component: EssentialExample,
 	fakeNavigator: true,
-},{
-	title: 'Advance usage',
-	document: require('../../docs/advance.md'),
-	component: AdvanceExample,
 }, {
 	title: 'Buttons',
 	document: require('../../docs/button.md'),
-	component: EssentialExample,
 }, {
 	title: 'Input',
 	document: require('../../docs/missing.md'),
-	component: EssentialExample,
+}, {
+	title: 'Select',
+	document: require('../../docs/select.md'),
 }, {
 	title: 'Drawer',
 	document: require('../../docs/missing.md'),
-	component: EssentialExample,
 }, {
 	title: 'Navigator (Native)',
 	document: require('../../docs/missing.md'),
-	component: EssentialExample,
+}, {
+	title: 'Advance example',
+	document: require('../../docs/advance.md'),
+	component: AdvanceExample,
 }];

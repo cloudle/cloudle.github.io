@@ -1,4 +1,4 @@
-# Basic usage
+# Basic example
 
 Import our component from `react-universal-ui` package.
 

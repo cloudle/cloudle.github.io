@@ -11,28 +11,12 @@
 
 **Browser support**: Chrome, Firefox, Safari >= 7, IE 10, Edge.
 
-[npm-image]: https://badge.fury.io/js/react-universal-ui.svg
-[npm-url]: https://npmjs.org/package/react-universal-ui
-[travis-image]: https://travis-ci.org/cloudle/ruui.svg?branch=master
-[travis-url]: https://travis-ci.org/cloudle/ruui
-[github-url]: https://github.com/cloudle/ruui
-[react-url]: https://facebook.github.io/react/
-[react-native-url]: https://facebook.github.io/react-native/
-[react-native-web-url]: https://github.com/necolas/react-native-web
-[react-wings-boilerplate-url]: https://github.com/cloudle/react-wings-boilerplate
-[material-ui-url]: http://www.material-ui.com/
-[ionic-url]: http://ionicframework.com/docs/v2/components/#overview
-[react-native-vector-icon-url]: https://github.com/oblador/react-native-vector-icons
-[cloud-vector-icons]: https://github.com/cloudle/react-native-vector-icons
-[react-native-drawer-url]: https://github.com/root-two/react-native-drawer
-[documentation-url]: https://cloudle.github.io/
-
 ## Installation
 ```
 npm install --save react-universal-ui
 ```
 
-**Alternatively, you can start with [react-wings-boilerplate][react-wings-boilerplate-url] which have more complete structure to work on cross-platform [React Native][react-native-url] project.**
+**Alternatively, you can start with [react-universal-ui boilerplate][boilerplate-url] which have more complete structure to work on cross-platform [React Native][react-native-url] project.**
 
 ## Influences
 [Material UI][material-ui-url], heavily inspired by their great component design for **Web**! My job is make it work in **Native** way.

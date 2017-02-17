@@ -6,6 +6,7 @@ import Markdown from 'react-markdown';
 import CodeBlock from './markdownRenderers/CodeBlock';
 import Heading from './markdownRenderers/Heading';
 import List from './markdownRenderers/List';
+import markdownDocumentHeadings from '../docs/headingConfigs.md';
 
 @connect(({app}) => {
 	return {
@@ -22,21 +23,18 @@ export default class DocumentBar extends Component {
 	}
 
 	render () {
-		const renderers = {
-			...Markdown.renderers,
-			CodeBlock,
-			Heading,
-			List,
-		};
+		const liveEdit = false, developmentMode = ENV == 'dev',
+			renderers = { ...Markdown.renderers, CodeBlock, Heading, List },
+			markdownContent = developmentMode && liveEdit
+				? require('../docs/select.md') : this.props.document;
+			markdownSource = markdownDocumentHeadings + markdownContent;
 
 		return <View
 			style={styles.container}
 		  className="document-bar"
 		  onLayout={this::onContainerLayout}>
-			{/*source={this.props.document}*/}
-			{/*source={require('../docs/advance.md')}*/}
 			<Markdown
-				source={this.props.document}
+				source={markdownSource}
 				renderers={renderers}/>
 		</View>
 	}

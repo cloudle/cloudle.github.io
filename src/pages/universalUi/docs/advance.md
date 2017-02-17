@@ -1,8 +1,3 @@
-[navigator-part1]: https://medium.com/react-native-training/first-look-react-native-navigator-experimental-9a7cf39a615b#.3s4gvjk2j
-[navigator-part2]: https://medium.com/react-native-training/react-native-navigator-experimental-part-2-implementing-redux-c6acbf66eca1#.v1dg6zpse
-[navigator-in-depth]: https://medium.com/react-native-training/react-native-navigationexperimental-in-depth-6910b9b0b990#.tjgp6ckw9
-[react-native-drawer]: https://github.com/root-two/react-native-drawer
-
 # More complete example
 
 This example **extract 2 scenes** from a real project.
